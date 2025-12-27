@@ -1,13 +1,14 @@
 {
-  "homepage": "https://jonah314.github.io/Jonah-sStudyPages",
+  
   "name": "jonahsstudypages",
+  "homepage": "https://jonah314.github.io/Jonah-sStudyPages/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
