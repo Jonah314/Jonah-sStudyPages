@@ -1,0 +1,62 @@
+.header {
+  background-color: #0f172a; /* Match SVG theme */
+  width: 100%;
+  height: 300px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG Text Animation */
+svg text {
+  animation: fadeIn 1.2s ease-in-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide subtitle on mobile */
+@media (max-width: 768px) {
+  .logo-subtitle {
+    display: none;
+  }
+}
+
+@media(max-width:1000px){
+    .header{
+        height:200px;
+    }
+    svg{
+        height:200px;
+    }
+}
+
+@media(max-width:600px){
+    .header{
+        height:150px;
+    }
+    svg{
+        height:150px;
+    }
+}
+@media(max-width:320px){
+    .header{
+        height:100px;
+    }
+    svg{
+        height: 100px;
+    }
+}
