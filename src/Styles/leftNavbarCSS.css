@@ -1,4 +1,5 @@
 .leftNavbar{
     background-color: var(--color-accent-green);
     border-radius:20px;
+    color: var(--color-text-primary);
 }
