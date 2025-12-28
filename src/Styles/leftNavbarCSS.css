@@ -1,3 +1,4 @@
 .leftNavbar{
-    background-color:pink;
+    background-color: var(--color-accent-green);
+    border-radius:20px;
 }

@@ -8,16 +8,19 @@ import '../../Styles/appLayoutCSS.css';
 function AppLayout(){
     return(
         <>
-            <div class = "appLayout">
+            <div className = "appLayout">
                 <div className ="top">
                     <Header />
                     <TopNavbar />
                 </div>
                 
-                <div className="bottom">
-                    <LeftNavBar />
-                    <MainContent />
+                <div className="center">
+                    <div className="bottom">
+                        <LeftNavBar />
+                        <MainContent />
+                    </div>
                 </div>
+                
                 
                 <h1> Testing... App Lay out</h1>
             </div>

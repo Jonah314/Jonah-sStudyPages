@@ -11,7 +11,7 @@
   --color-text-primary: #f8fafc;
   --color-text-secondary: #cbd5f5;
   --color-dark-contrast: #020617;
-
+  --color-light-blue:#eef6ff;
 
   /*  example how to use:
   .header {
@@ -24,5 +24,11 @@ a {
   */
 
 
+}
+
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
