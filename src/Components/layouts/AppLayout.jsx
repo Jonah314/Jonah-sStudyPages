@@ -7,7 +7,7 @@ import "../../Styles/appLayoutCSS.css";
 import {useState} from 'react';
 
 function AppLayout() {
-  const [selectedTopic, setSelectedTopic]= useState("");
+  const [selectedTopic, setSelectedTopic]= useState("HTML");
   const [selectedPage, setPage] = useState("");
 
   return (
@@ -16,8 +16,8 @@ function AppLayout() {
       <TopNavbar onSelect={setSelectedTopic} />
       <div className="center">
         <div className="bottom">
-          <LeftNavBar topic={selectedTopic}/>
-          <MainContent page={selectedPage}/>
+          <LeftNavBar topic={selectedTopic} pageLinks={setPage}/>
+          <MainContent page={selectedPage} />
         </div>
       </div>
     </div>
