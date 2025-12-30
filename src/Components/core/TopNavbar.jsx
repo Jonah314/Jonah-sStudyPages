@@ -1,21 +1,28 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../Styles/topNavbarCSS.css";
+import {useState, useEffect} from 'react';
 
-function TopNavbar() {
+function TopNavbar({ onSelect }) {
+
+  const handleSelect = (value) => {
+    onSelect(value);
+  };
+
   return (
     <nav className="topNavbar">
       <ul className="navList">
-        <li>
-          <a href="/css">CSS</a>
+        <li onClick={() => handleSelect("HTML")} role="button" tabIndex={0}>
+          HTML
         </li>
-        <li>
-          <a href="/html">HTML</a>
+        <li onClick={() => handleSelect("CSS")} role="button" tabIndex={0}>
+          CSS
         </li>
-        <li>
-          <a href="/javascript">JavaScript</a>
+        <li onClick={() => handleSelect("JAVASCRIPT")} role="button" tabIndex={0}>
+          JAVASCRIPT
         </li>
-        <li>
-          <a href="/react">React</a>
+        <li onClick={() => handleSelect("REACT")} role="button" tabIndex={0}>
+          REACT
         </li>
       </ul>
     </nav>

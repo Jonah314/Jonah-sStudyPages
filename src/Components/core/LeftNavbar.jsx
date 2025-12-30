@@ -1,17 +1,23 @@
-import React from 'react';
-import '../../Styles/leftNavbarCSS.css';
+import React from "react";
+import { NavLink, useParams } from "react-router-dom";
+import "../../Styles/leftNavbarCSS.css";
 
-function LeftNavBar(){
-    return (
-        <div className="leftNavbar">
-            <h1 className="center">CSS</h1>
-            <ul>
-                <li>css Lesson 1</li>
-                <li>css Lesson 2</li>
-            </ul>
-        </div>
-        
-    )
+
+
+function LeftNavBar(props) {
+  
+
+  return (
+
+
+    <div className="leftNavbar">
+      <h2 className="center">{props.topic}</h2>
+      <ul>
+        <li>Topics for </li>
+        <li>More topics</li>
+      </ul>
+    </div>
+  );
 }
 
 export default LeftNavBar;

@@ -13,7 +13,7 @@
 }
 
 /* Link styles */
-.navList a {
+.navList li {
   color: var(--color-text-primary);
   text-decoration: none;
   font-weight: 600;
@@ -23,7 +23,7 @@
 }
 
 /* Hover underline animation */
-.navList a::after {
+.navList li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -36,16 +36,16 @@
   transition: transform 0.25s ease;
 }
 
-.navList a:hover {
+.navList li:hover {
   color: var(--color-bg-primary);
 }
 
-.navList a:hover::after {
+.navList li:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
 /* Active state (optional) */
-.navList a:active {
+.navList li:active {
   opacity: 0.8;
 }

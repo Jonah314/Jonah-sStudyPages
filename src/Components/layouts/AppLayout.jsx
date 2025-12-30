@@ -1,30 +1,27 @@
-import React from 'react';
-import Header from '../core/Header';
-import LeftNavBar from '../core/LeftNavbar';
-import TopNavbar from '../core/TopNavbar';
-import MainContent from './MainContent';
-import '../../Styles/appLayoutCSS.css';
+import React from "react";
+import Header from "../core/Header";
+import TopNavbar from "../core/TopNavbar";
+import LeftNavBar from "../core/LeftNavbar";
+import MainContent from "./MainContent";
+import "../../Styles/appLayoutCSS.css";
+import {useState} from 'react';
 
-function AppLayout(){
-    return(
-        <>
-            <div className = "appLayout">
-                <div className ="top">
-                    <Header />
-                    <TopNavbar />
-                </div>
-                
-                <div className="center">
-                    <div className="bottom">
-                        <LeftNavBar />
-                        <MainContent />
-                    </div>
-                </div>
-                
-                
-                <h1> Testing... App Lay out</h1>
-            </div>
-        </>
-    );
+function AppLayout() {
+  const [selectedTopic, setSelectedTopic]= useState("");
+  const [selectedPage, setPage] = useState("");
+
+  return (
+    <div className="appLayout">
+      <Header />
+      <TopNavbar onSelect={setSelectedTopic} />
+      <div className="center">
+        <div className="bottom">
+          <LeftNavBar topic={selectedTopic}/>
+          <MainContent page={selectedPage}/>
+        </div>
+      </div>
+    </div>
+  );
 }
+
 export default AppLayout;
