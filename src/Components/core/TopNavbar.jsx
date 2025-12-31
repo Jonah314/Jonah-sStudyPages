@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../Styles/topNavbarCSS.css";
-import {useState, useEffect} from 'react';
 
 function TopNavbar({ onSelect }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleSelect = (value) => {
     onSelect(value);
+    setIsDropdownOpen(false); // close dropdown after selecting
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
   };
 
   return (
     <nav className="topNavbar">
+      <div className="topNavPhoneMenu">
+        <button className="dropDownButton" onClick={toggleDropdown}>
+          Topic V
+        </button>
+        {isDropdownOpen && (
+          <div className="topNavDropDownContent">
+            <p onClick={() => handleSelect("HTML")}>HTML</p>
+            <p onClick={() => handleSelect("CSS")}>CSS</p>
+            <p onClick={() => handleSelect("JAVASCRIPT")}>JAVASCRIPT</p>
+            <p onClick={() => handleSelect("TYPESCRIPT")}>TYPESCRIPT</p>
+            <p onClick={() => handleSelect("REACT")}>REACT</p>
+          </div>
+        )}
+      </div>
+
       <ul className="navList">
         <li onClick={() => handleSelect("HTML")} role="button" tabIndex={0}>
           HTML
@@ -27,7 +47,6 @@ function TopNavbar({ onSelect }) {
         <li onClick={() => handleSelect("REACT")} role="button" tabIndex={0}>
           REACT
         </li>
-        
       </ul>
     </nav>
   );

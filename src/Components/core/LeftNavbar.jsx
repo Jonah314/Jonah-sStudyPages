@@ -1,10 +1,13 @@
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 import "../../Styles/leftNavbarCSS.css";
+import {useState} from 'react';
 
 
 
 function LeftNavBar(props) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const pagesByTopic = {
   HTML: [
 
@@ -49,6 +52,7 @@ function LeftNavBar(props) {
 
   const handleSelectPage = (value) => {
     props.pageLinks(value);
+    setIsDropdownOpen(false); // close dropdown after selecting
   };
 
   function SetPagesLinks() {
@@ -61,7 +65,9 @@ function LeftNavBar(props) {
       </>
     );
   }
-
+   const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
 
 
   return (
@@ -69,10 +75,22 @@ function LeftNavBar(props) {
 
 
     <div className="leftNavbar">
-      <h2 className="center">{props.topic}</h2>
-      <ul className="center">
-        <SetPagesLinks />
-      </ul>
+      <div className="leftNavbarPhone">
+        <button className="leftDropDownButton" onClick={toggleDropdown}>
+          V {props.topic} V
+        </button>
+        {isDropdownOpen && (
+          <SetPagesLinks />
+        )}
+      </div>
+
+      <div className="fullScreen">
+          <h2 className="center">{props.topic}</h2>
+          <ul className="center">
+            <SetPagesLinks />
+          </ul>
+      </div>
+      
     </div>
   );
 }

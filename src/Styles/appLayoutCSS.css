@@ -16,3 +16,14 @@
     column-gap: 25px;
     min-height:600px;
 }
+
+/* Styling for phones */
+
+@media only screen and (max-width:600px){
+    .bottom{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        margin: 10px 0;
+    }
+}

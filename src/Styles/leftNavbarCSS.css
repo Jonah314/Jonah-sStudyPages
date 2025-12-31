@@ -25,7 +25,9 @@
   animation-iteration-count: one;
 }
 
-
+.leftNavbarPhone{
+  display:none;
+}
 
 
 @keyframes shake-soft {
@@ -35,4 +37,30 @@
   60%  { transform: translate(-1px, 0) rotate(-0.2deg); }
   80%  { transform: translate(1px, 0) rotate(0.2deg); }
   100% { transform: translate(0, 0) rotate(0); }
+}
+
+/* Drop Down menu for phones Styling */
+@media only screen and (max-width:600px){
+  .fullScreen{
+    display:none;
+  }
+  .leftNavbarPhone{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  .leftDropDownButton {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border: none;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    font-size:20px;
+    background-color:var(--color-accent-green);
+    color:white;
+  }
+
+  
 }
