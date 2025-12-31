@@ -21,9 +21,13 @@ function TopNavbar({ onSelect }) {
         <li onClick={() => handleSelect("JAVASCRIPT")} role="button" tabIndex={0}>
           JAVASCRIPT
         </li>
+        <li onClick={() => handleSelect("TYPESCRIPT")} role="button" tabIndex={0}>
+          TYPESCRIPT
+        </li>
         <li onClick={() => handleSelect("REACT")} role="button" tabIndex={0}>
           REACT
         </li>
+        
       </ul>
     </nav>
   );

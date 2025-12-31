@@ -7,28 +7,42 @@ import "../../Styles/leftNavbarCSS.css";
 function LeftNavBar(props) {
   const pagesByTopic = {
   HTML: [
-    { id: 1, name: "HtmlLesson1" },
-    { id: 2, name: "HtmlHomePage"},
-    { id: 3, name: "HtmlRequestResponsePage"}
+
+    { id: 1, name: "HtmlHomePage", title: "Home"},
+    { id: 2, name: "HtmlRequestResponsePage", title:"Html Request Response"}
   ],
   CSS: [
-    { id: 1, name: "CssLesson1" },
-    { id: 2, name: "CssHomePage"}
+    { id: 1, name: "CssHomePage", title: "Home"},
+    { id: 2, name: "CssSelectorsPage", title:"Selectors"},
+    { id: 3, name: "CssBoxModelPage", title:"Box Model"},
+    { id: 4, name: "CssColorsPage", title:"Colors"},
+    { id: 5, name: "CssFontsPage", title:"Fonts & Web-Safe Fonts"},
+    { id: 6, name: "CssFlexboxPage", title:"Flexbox"},
+    { id: 7, name: "CssGridPage", title:"Grid"}
+    
   ],
   JAVASCRIPT: [
-    { id: 1, name: "JsLesson1" },
-    { id: 2, name: "JavaScriptHomePage"},
-    { id: 3, name: "PrimitiveAndComplexTypeJs"},
-    { id: 4, name: "JavaScriptFunctionsPage"},
-    { id: 5, name: "JavaScriptClassesPage"},
-    { id: 6, name: "JavaScriptScopePage"},
-    { id: 7, name: "JavaScriptArraysPage"}
+    { id: 1, name: "JavaScriptHomePage", title:"Home"},
+    { id: 2, name: "PrimitiveAndComplexTypeJs",title:"Primitive & Complex Types"},
+    { id: 3, name: "JavaScriptFunctionsPage", title: "Functions"},
+    { id: 4, name: "JavaScriptClassesPage", title:"Class"},
+    { id: 5, name: "JavaScriptScopePage", title: "Scope"},
+    { id: 6, name: "JavaScriptArraysPage", title:"Arrays"},
+    { id: 7, name: "JsOperatorsPage", title:"Operators"},
+    { id: 8, name: "JsControlFlowPage", title:"Control Flow"},
+    { id: 9, name: "JsObjectsPage", title:"Objects"},
+    { id: 10, name: "JsDomPage", title:"DOM"},
+    { id: 11, name: "JsES6Page", title:"ES6 Features"},
+    { id: 12, name: "JsSyncAsyncPage", title: "Synchronous Vs Asynchronous"},
+    { id: 13, name: "JsPromisesPage", title: "Promises"}
+  ],
+  TYPESCRIPT:[
+    { id: 1, name: "TypeScriptHomePage", title:"TypeScript"}
   ],
   REACT: [
-    { id: 1, name: "ReactLesson1" },
-    { id: 2, name: "TerminalCheatSheet" },
-    { id: 3, name: "ReactHomePage"},
-    { id: 4, name: "ReactStateAndPropsPage"}
+    { id: 1, name: "ReactHomePage", title:"Home"},
+    { id: 2, name: "TerminalCheatSheet", title:"Terminal Cheat Sheet" },
+    { id: 3, name: "ReactStateAndPropsPage", title:"State & Props"}
   ]};
 
   const topics = pagesByTopic[props.topic] || [];
@@ -42,7 +56,7 @@ function LeftNavBar(props) {
       <>
         {topics.map(page => (
           <li key={page.id} onClick={() => handleSelectPage(page.name)} role="button" tabIndex={0}>
-            {page.name}</li>
+            {page.title}</li>
         ))}
       </>
     );
@@ -56,7 +70,7 @@ function LeftNavBar(props) {
 
     <div className="leftNavbar">
       <h2 className="center">{props.topic}</h2>
-      <ul>
+      <ul className="center">
         <SetPagesLinks />
       </ul>
     </div>

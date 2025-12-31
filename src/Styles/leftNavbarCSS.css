@@ -2,4 +2,37 @@
     background-color: var(--color-accent-green);
     border-radius:20px;
     color: var(--color-text-primary);
+    cursor:pointer;
+}
+
+.leftNavbar li{
+    list-style-type:none;
+    text-align:center;
+    margin:10px 0;
+    
+}
+.leftNavbar ul{
+    padding:0;
+    margin:0;
+}
+
+.leftNavbar li:hover{
+    color:black;
+    animation: shake-soft 0.2s ease-in-out;
+    cursor: pointer;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: one;
+}
+
+
+
+
+@keyframes shake-soft {
+  0%   { transform: translate(0, 0) rotate(0); }
+  20%  { transform: translate(-1px, 0) rotate(-0.3deg); }
+  40%  { transform: translate(1px, 0) rotate(0.3deg); }
+  60%  { transform: translate(-1px, 0) rotate(-0.2deg); }
+  80%  { transform: translate(1px, 0) rotate(0.2deg); }
+  100% { transform: translate(0, 0) rotate(0); }
 }

@@ -1,6 +1,7 @@
 .topNavbar {
   background-color: var(--color-accent-blue);
   padding: 0.75rem 2rem;
+  cursor:pointer;
 }
 
 .navList {
